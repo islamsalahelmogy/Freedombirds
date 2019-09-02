@@ -73,7 +73,7 @@
                                             
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <a class="dropdown-item" id="post-edit-{{$p->id}}" href="" data-toggle="modal" onclick="        edit_delete('post','edit','{{$p->id}}')"
+                                        <a class="dropdown-item" id="post-edit-{{$p->id}}" href="" data-toggle="modal" onclick="edit_delete('post','edit','{{$p->id}}')"
                                         data-target="#edit-delete">Edit</a>
                                             <a class="dropdown-item" id="post-delete-{{$p->id}}" href="" data-toggle="modal" onclick=" edit_delete('post','delete','{{$p->id}}')" data-target="#edit-delete">Delete</a>
                                         </div>
@@ -183,9 +183,11 @@
 @endsection
 
 @section('script')
-    <script>
+<script>
     
-  
+    
+
+    
     $(document).ready(function(){
         
         
@@ -464,5 +466,5 @@
         }
     }
     
-    </script>
+</script>
 @append

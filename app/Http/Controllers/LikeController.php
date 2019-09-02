@@ -38,6 +38,7 @@ class LikeController extends Controller
     {
         $id = Auth::id();
         $post_id =$request->post_id;
+        //dd(Like::where(['user_id'=>$id,'post_id'=>$post_id])->get());
         $like = Like::where(['user_id'=>$id,'post_id'=>$post_id])->get();
         if(count($like) > 0) {
             $flag = 0;
