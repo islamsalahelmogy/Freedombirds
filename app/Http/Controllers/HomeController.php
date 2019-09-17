@@ -30,7 +30,7 @@ class HomeController extends Controller
         //$posts=Post::all();   // 1
         $posts=Post::orderBy('updated_at', 'desc')->get();  //good 2
         //dd(Auth::user());
-        //$posts=DB::table('posts')->orderBy('updated_at','desc')->get();
+        //$postss=DB::table('posts')->orderBy('updated_at','desc')->get();
         //dd($posts);
         $user=Auth::user();
         $array = [];

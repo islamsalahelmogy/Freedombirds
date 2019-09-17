@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('style')
+    <style>
+        .content{
+            height:500px;
+        }
+    </style>
+@endsection
 
 @section('content')
     <div class="container">

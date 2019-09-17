@@ -4,11 +4,19 @@
         .post h2,.post p{width:100px}
         .py-4{padding: 0px !important }
         .wall{padding-top: 30px !important}
+        
     </style>
+    @if($user->posts->count() == 0)
+        <style>
+            .content{
+                height:500px;
+            }
+        </style>
+    @endif
 @endsection
 @section('menu')
 <a class="dropdown-item" href="{{ route('home') }}">
-        {{ __('home') }}
+        {{ __('Home') }}
 </a>
 
 <a class="dropdown-item" href="{{ route('editprofile') }}">
@@ -113,7 +121,7 @@
                         <ul class="float-right" style="width: 90.014px;">
                             <li><a><i class="fa fa-comments"></i></a></li>
                             @if($p->comments->count() > 0)
-                                <li><a><em class="mr-5">{{$p->comments->count()}}</em></a></li>
+                                <li><a><em class="comcount">{{$p->comments->count()}}</em></a></li>
                             @endif
                         </ul>
                         <ul class="likes" style="padding-left:40px !important">
@@ -276,7 +284,8 @@
                                     '</li>'
                             );
                             that.val(' ');
-
+                            $(".post-"+data.comment.post_id+" .comcount").html(data.ccounter);
+                            $(".commentCount h2").html(data.totalComment);
                             }
 
                         });

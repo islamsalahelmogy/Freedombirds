@@ -1,7 +1,16 @@
 @extends('layouts.app')
+@section('style')
+    @if($posts->count() == 0)
+        <style>
+            .content{
+                height:500px;
+            }
+        </style>
+    @endif
+@endsection
 @section('menu')
 <a class="dropdown-item" href="{{ route('profile') }}">
-        {{ __('profile') }}
+        {{ __('Profile') }}
 </a>
 @endsection
 @section('content')
@@ -53,6 +62,7 @@
                 </form>
             </div>
 
+            
             @foreach($posts as $p) 
                 <div class="card gedf-card post-{{$p->id}}" style="margin-top:10px;margin-bottom:10px;">
                     <div class="card-header">
@@ -96,7 +106,7 @@
                         <ul class="float-right" style="width: 90.014px;">
                             <li><a><i class="fa fa-comments"></i></a></li>
                             @if($p->comments->count() > 0)
-                                <li><a><em class="mr-5">{{$p->comments->count()}}</em></a></li>
+                                <li><a><em class="comcount">{{$p->comments->count()}}</em></a></li>
                             @endif
                         </ul>
                         <ul class="likes" style="padding-left:40px !important">
@@ -228,7 +238,8 @@
                             data:{text:text, post_id:id,_token: $('meta[name="csrf-token"]').attr('content')},
 
                             success:function(data){
-                            
+                                
+                               // console.log(data.ccounter);
                                 $(".comments_"+data.comment.post_id).append(
                                     '<li class="list-group-item comment-'+data.comment.id+'">'+
                                         '<div class="d-flex  align-items-center row">'+
@@ -257,6 +268,13 @@
                                     '</li>'
                             );
                             that.val(' ');
+                            
+                            $(".post-"+data.comment.post_id+" .comcount").html(
+                                
+                                data.ccounter
+
+                            );
+
 
                             }
                                
