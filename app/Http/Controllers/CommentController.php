@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Post;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -43,8 +44,9 @@ class CommentController extends Controller
         $comment->user_id = Auth::id();
         $comment->save();
         $image_url = $comment->user->image_url;
-        
-        return response()->json(['comment'=>$comment,'image'=>$image_url]);
+        //$commcount=Post::find($request->post_id)->comments->count();
+        //dd($commcount);
+        return response()->json(['comment'=>$comment,/*'ccounter'=>$commcount,*/'image'=>$image_url]);
 
     }
 

@@ -35,13 +35,13 @@
                     
                            <div class="col-12 " style="margin-top:20px" >
                                 <div class="text-center">     <!-- col-8 offset-4   -->
-                                    <h3 class="title">{{$user->name}}</h3>
+                                    <h3 class="title">{{ucfirst($user->name)}}</h3>
                             </div>
                             </div>
                             
                             <div class="col-12">
                                 <div class="text-center">
-                                    <p class="category">{{$user->bio}}</p>
+                                    <p class="category">{{ucfirst($user->bio)}}</p>
                             </div>
                             </div>
                             <div class="col-12 row" style="padding-left:0px">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -25,8 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts=Post::all();
+        //$posts=Post::all();   // 1
+        $posts=Post::orderBy('updated_at', 'desc')->get();  //good 2
         //dd(Auth::user());
+        //$posts=DB::table('posts')->orderBy('updated_at','desc')->get();
+        //dd($posts);
         $user=Auth::user();
         $array = [];
        /* foreach($user->likes as $like){
