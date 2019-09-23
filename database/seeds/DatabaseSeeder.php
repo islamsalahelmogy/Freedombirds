@@ -1,5 +1,8 @@
 <?php
 
+use App\User;
+use App\Post;
+use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+       
+        /*انا هنابزود كولوم في جدول انا عايزه بدل ما اعملو من الميجريشن عملتو  من هنا */
+         /*Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('phone');
+            //$table->string('phone')->after('password')->default("01143294789");
+        }); */
+            
+        /*بدم عملت اكتر من سيدر فيل يبقي لازم في الاخر لازم اناديهم كلهم  في الداتابيز سيدر */
+        $this->call(PostTableSeeder::class);
+
     }
 }

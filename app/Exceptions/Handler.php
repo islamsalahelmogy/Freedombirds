@@ -50,6 +50,7 @@ class Handler extends ExceptionHandler
         /*$whoops=new \Whoops\Run;
         $whoops->pushHandler (new \Whoops\Handler\PrettyPageHandler);
         $whoops->register();*/
+        //dd(parent);
         return parent::render($request, $exception);
     }
 }
