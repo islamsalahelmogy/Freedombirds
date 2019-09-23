@@ -24,5 +24,15 @@ class DatabaseSeeder extends Seeder
         /*بدم عملت اكتر من سيدر فيل يبقي لازم في الاخر لازم اناديهم كلهم  في الداتابيز سيدر */
         $this->call(PostTableSeeder::class);
 
+        /*لو عايز ارن سيدر معين فقط  */
+        /*php artisan db:seed --class=PostsTableSeeder  */
+
+        /*بدل ما انادي سيدر سيدر لا انا ممكن اناديهم كلهم لوكشة واحدة  */
+        /*  $this->call([
+            UsersTableSeeder::class,
+            PostsTableSeeder::class,
+            CommentsTableSeeder::class,
+            ]); */
+
     }
 }
