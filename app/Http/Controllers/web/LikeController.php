@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\web;
 
 use App\Like;
 use App\Post;
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Controllers\Controller;
 class LikeController extends Controller
 {
     /**
