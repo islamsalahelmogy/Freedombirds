@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PostResource;
+use App\Http\Resources\UserResource;
+use App\Post;
 
 class UserController extends Controller
 {
@@ -17,7 +20,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user=Auth::user();git checkout
+        //return new UserResource(auth()->user()->load('posts.comments', 'posts.likes'));
+       //$user=Auth::user()::with(['posts.comments'])->get(); 
+         //return ($user);
+         $user=Auth::user();
         return view('profile.index',compact('user'));
     }
 
