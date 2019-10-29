@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user=Auth::user();
+        $user=Auth::user();git checkout
         return view('profile.index',compact('user'));
     }
 
