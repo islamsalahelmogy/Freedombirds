@@ -5,8 +5,10 @@
             .content{
                 height:500px;
             }
+           
         </style>
     @endif
+    
 @endsection
 @section('menu')
 <a class="dropdown-item" href="{{ route('profile') }}">

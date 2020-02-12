@@ -29,18 +29,16 @@ class HomeController extends Controller
     public function index()
     {
         //$posts=Post::all();   // 1
-        $posts=Post::orderBy('updated_at', 'desc')->get();  //good 2
+        $posts = Post::orderBy('updated_at', 'desc')->get();  //good 2
         //dd(Auth::user());
         //$postss=DB::table('posts')->orderBy('updated_at','desc')->get();
         //dd($posts);
-        $user=Auth::user();
+        $user = Auth::user();
         $array = [];
-       /* foreach($user->likes as $like){
+        /* foreach($user->likes as $like){
             array_push($array,$like->pivot->post_id);
         }
         dd($array);*/
-        return view('home',compact('posts','user'));
+        return view('home', compact('posts', 'user'));
     }
-
-    
 }
