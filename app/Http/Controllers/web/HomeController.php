@@ -4,7 +4,7 @@ namespace App\Http\Controllers\web;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
