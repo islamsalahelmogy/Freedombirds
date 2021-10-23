@@ -7,6 +7,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class CommentController extends Controller
 {
